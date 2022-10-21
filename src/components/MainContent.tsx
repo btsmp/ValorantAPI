@@ -6,6 +6,7 @@ interface AgentProps {
   uuid: string
   displayName: string
   fullPortrait: string
+  backgroundGradientColors: string[]
 }
 
 
@@ -14,12 +15,16 @@ export function MainContent(props: any) {
   const { agents } = props
 
   return (
-    <main className="px-14 py-3 sm:grid sm:grid-cols-5 flex flex-col gap-4">
+    <main className="grid grid-flow-col overflow-y-hidden snap-x snap-mandatory scroll-smooth style-scroll">
       {agents.map((agent: AgentProps, index: number) => {
         return (
-          <CardAgent key={agent.uuid} name={agent.displayName} img={agent.fullPortrait} />
+          <div className="w-screen snap-center">
+            <CardAgent key={agent.uuid} name={agent.displayName} img={agent.fullPortrait} bgcolor={agent.backgroundGradientColors}/>
+          </div>
         )
       })}
     </main>
   )
+
+
 }

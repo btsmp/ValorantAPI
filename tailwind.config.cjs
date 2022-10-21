@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [ 'Roboto', 'sans-serif' ],
+        valorant: ['valorant', 'sans-serif'],
+        agent: ['agent', 'sans-serif'],
       }
     },
   },

@@ -22,9 +22,9 @@ export function App() {
     getAgents()
   }, [])
   return (
-    <div className="grid grid-flow-row h-screen">
+    <div className="bg-[#111111] h-screen flex flex-col overflow-y-hidden">
       <Header />
-      <div className="overflow-scroll">
+      <div>
         <MainContent agents={agentsToShow} />
       </div>
     </div>
