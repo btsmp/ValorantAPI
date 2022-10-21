@@ -2,21 +2,20 @@ interface AgentProps {
   key: string
   name: string
   img: string
+  bgcolor:string[]
 }
 
 
 
 export function CardAgent(props: AgentProps) {
 
-  const { name, img } = props
+  const { name, img, bgcolor } = props
 
   return (
-    <div className="flex flex-col items-center justify-center border-2 border-black rounded-2xl overflow-hidden">
-      <div className="w-96">
-        <img src={img} alt={`Imagem de ${name} `} />
-      </div>
-      <h1 className="bg-[#111] w-full text-center p-2 mt-3 font-semibold text-white">{name}</h1>
-
+    // tentei colocar uma cor no background mas desse jeito não funcionou 
+    <div style={{background: `linear-gradient(#${bgcolor[0]}, #${bgcolor[1]})`}} className={`flex flex-col lg:flex-row items-center justify-center pt-32 lg:pt-0`}>
+      <h1 className="font-semibold text-white font-agent uppercase p-3 text-5xl lg:text-9xl">{name}</h1>
+      <img className="w-full h-auto lg:h-[850px] lg:w-auto" src={img} alt={`Imagem de ${name} `} />
     </div>
   )
 
